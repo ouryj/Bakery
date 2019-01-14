@@ -1,0 +1,20 @@
+
+<div class=" card-deck">
+<% count = 0%>
+<% @my_cookie.each do |item| %>
+  
+  <% if(count % 3 == 0) %>
+    <div class="w-100"></div>
+  <% end %>
+    <div class="card">
+        <img class="card-img-top" src="<%=item[:src]%>" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title">  Price: $    <%=item[:price]%>  </h5>
+        <p class="card-text">    Description:<%=item[:des]%>  </p>
+        
+        </div>
+    
+    </div>
+    <% count += 1 %>
+<% end %>
+</div>

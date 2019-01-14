@@ -1,0 +1,30 @@
+ img{
+    height: 300px; width: 400px;
+}
+.carousel-item {
+    display: inline-block;
+}
+.row {
+    border: solid 1px;
+    margin: 20px;
+    width: 1220px;
+}
+.card-deck {
+    margin: 20px; border: snow 1px
+}
+.last {
+    height: 400px;
+}
+nav {
+    margin: 20px;padding: 20px;
+}
+body {
+    background-color: pink;
+
+}
+nav a {
+    padding: 40px; margin: 40px;
+    font-family: 'Courier New', Courier, monospace;
+
+    color: coral
+}
