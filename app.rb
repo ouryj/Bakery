@@ -32,11 +32,14 @@ get "/muffin" do
 end
 
 post "/form" do 
+    if params[:email].empty?
+        erb :home
+    else
 
 from = SendGrid::Email.new(email: 'test@example.com')
 to = SendGrid::Email.new(email: params[:email])
 subject = 'here is your catalog'
-content = SendGrid::Content.new(type: 'text/plain', value: params[:name])
+content = SendGrid::Content.new(type: 'text/plain', value: @my_cake)
 mail = SendGrid::Mail.new(from, subject, to, content)
 
 sg = SendGrid::API.new(api_key: ENV['SABI_PIA'])
@@ -46,4 +49,5 @@ puts response.body
 #puts response.parsed_body
 puts response.headers
 erb :home
+    end
 end
