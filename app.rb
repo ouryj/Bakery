@@ -3,6 +3,10 @@ require 'sendgrid-ruby'
 require_relative "mainclass"
 
 
+template = Bakery.new
+@my_cake = template.cakes({price:9.74,des:'makeup cake',src:'/images/cake1.jpg'},{price:5.89,des:'mixberry cake',src:'/images/cake2.jpg'},{price:6.54,des:'pink cake',src:'/images/cake3.jpeg'},{price:4.5,des:'banana cake',src:'/images/cake4.jpeg'},{price:6.97,des:'coco cake',src:'/images/cake5.png'},{price:6.45,des:'high cake',src:'/images/cake6.jpg'},{price:8.9,des:'dreamy cake',src:'/images/cake7.jpeg'},{price:5.75,des:'fly cake',src:'/images/cake8.jpeg'},{price:7.89,des:'munchies cake',src:'/images/cake9.jpg'})
+ 
+
 get "/" do 
 
     erb :home
@@ -10,7 +14,7 @@ end
 
 get "/cakes" do 
     @template = Bakery.new
-    @my_cake = @template.cakes({price:9.74,des:'makeup cake',src:'/images/cake1.jpg'},{price:5.89,des:'mixberry cake',src:'/images/cake2.jpg'},{price:6.54,des:'pink cake',src:'/images/cake3.jpeg'},{price:4.5,des:'banana cake',src:'/images/cake4.jpeg'},{price:6.97,des:'coco cake',src:'/images/cake5.png'},{price:6.45,des:'high cake',src:'/images/cake6.jpg'},{price:8.9,des:'dreamy cake',src:'/images/cake7.jpeg'},{price:5.75,des:'fly cake',src:'/images/cake8.jpeg'},{price:7.89,des:'munchies cake',src:'/images/cake9.jpg'})
+   @my_cake = @template.cakes({price:9.74,des:'makeup cake',src:'/images/cake1.jpg'},{price:5.89,des:'mixberry cake',src:'/images/cake2.jpg'},{price:6.54,des:'pink cake',src:'/images/cake3.jpeg'},{price:4.5,des:'banana cake',src:'/images/cake4.jpeg'},{price:6.97,des:'coco cake',src:'/images/cake5.png'},{price:6.45,des:'high cake',src:'/images/cake6.jpg'},{price:8.9,des:'dreamy cake',src:'/images/cake7.jpeg'},{price:5.75,des:'fly cake',src:'/images/cake8.jpeg'},{price:7.89,des:'munchies cake',src:'/images/cake9.jpg'})
     
     erb :cakes
 end
@@ -41,4 +45,5 @@ puts response.status_code
 puts response.body
 #puts response.parsed_body
 puts response.headers
+erb :home
 end
